@@ -24,9 +24,8 @@
               var file = this.files[0];
               var fileName = file.name;
 
-              $.post( "wait.php", { filepath: fileName }, function(data) {
+              $.post( "ocr_demo.php", { filepath: fileName }, function(data) {
                   document.getElementById("demo").innerHTML = data.result;
-                //   console.log(data.result);
               });
 
             }else{
