@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    
+    <input type="file" name="myFileInput" id="myFileInput">
+    
+    <pre>
+        <div id="demo"></div>
+    </pre>
+    
+    <script>
+       
+        $(document).ready(function(){
+          $("#myFileInput").change(function(){
+            if(this.files.length){
+             
+              var file = this.files[0];
+              var fileName = file.name;
+
+              $.post( "wait.php", { filepath: fileName }, function(data) {
+                  document.getElementById("demo").innerHTML = data.result;
+                //   console.log(data.result);
+              });
+
+            }else{
+               console.log("No file selected");
+            }
+          });
+        });
+
+    </script>
+
+</body>
+</html>
