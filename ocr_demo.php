@@ -24,7 +24,7 @@
           CURLOPT_POSTFIELDS => $data,
           CURLOPT_HTTPHEADER => array(
             "Content-Type: multipart/form-data",
-            "apikey: KunPfm0IAA5AoEyLtTsQxiUIod08wusU"
+            "apikey: "
           )
         ));
 
